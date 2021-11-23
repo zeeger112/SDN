@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ftp>
+    <conn type="1">
+        <server>127.0.0.1</server>
+        <username>zderks</username>
+		<wachtwoord>123</wachtwoord>
+		<target>/</target>
+		<source>testftpsend.txt</source>
+    </conn>
+</ftp>

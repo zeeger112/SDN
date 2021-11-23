@@ -1,0 +1,62 @@
+• Noem 4 Linux/Unix commando's die ook werken onder Powershell.
+ls cd cat clear cp 
+• "cd" naar de CA certificaten op de lokale machine. Hoeveel certificaten zie je daar?
+ current user en lokal machine
+• Noem het commando waarmee je de variabelen kan bekijken in de juiste psdrive.
+get-psdrive
+• Welk commando kan je ook gebruiken in plaats van "cd"?
+set-location
+• Welk commando kan je ook gebruiken in plaats van "dir"?
+Get-childitem
+• "cd" naar HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT indien aanwezig. Wat is de
+ProductName?
+windows 10 pro
+• “cls” is een alias van?
+clear
+• maak een alias aan met de naam "hier" dat verwijst naar "get-location"
+set-alias hier get-location
+• "werkt" de alias nog als je het window met PowerShell afsluit en weer opnieuw opstart?
+nee
+• Geef het commando waarmee je voorbeelden kan opvragen van het gebruik van "stop-process"
+get-help stop-process -examples
+• Met welk commando kan je alle help updaten tot de meest recente versie?
+update-help
+• Met welk commando krijg je online hulp bij het commando "stop-computer" ?
+get-help
+• Wat gebeurt er als je een verplichte optie niet opgeeft? Bijvoorbeeld bij "stop-process" ?
+dan vraagd die alsnog om de value
+• Laat alle processen zien met ps en geef deze weer in 4 kolommen.
+ps | Format-wide -column 4
+• Laat alle processen zien met ps en geef deze weer als een lijst (label-waarde).
+ps | Format-list
+• Gebruik test-connection om een computer 4x te pingen met steeds 4 seconden tussenpauze.
+Test-Connection {ip van computer} -Delay 4
+• Een lastige: maak een lijstje aan met drie computer namen en sla deze op als "hosts.txt". Gebruik testconnection EN get-content om deze hosts achtereenvolgens te "pingen".
+$ding = Get-Content .\hosts.txt
+Test-Connection $ding -Delay 4
+• gebruik de pipeline om de nieuweste 10 errors in de eventlog van het systeem te bekijken.
+Set-Variable test | Get-Eventlog -Logname System -EntryType Error -Newest 10
+Get-Variable -Name test
+• Gebruik "ps" en converteer de output naar html
+ps | ConvertTo-Html
+• Gebruik "ps" en converteer de output naar csv en sla deze op als file.
+ps | Export-Csv {file name}
+• Gebruik "ps" en selecteer verschillende kolommen waaronder TotalProcessorTime
+ps | Select CPU, id
+• Gebruik "ps" en sorteer op TotalProcessorTime (aflopend). Welk proces gebruikt de meeste processortijd?
+ ps | Sort CPU -Descending
+ 4942       0      212       6420   4,889.36      4   0 System
+• Idem nu voor het gebruik van virtueel geheugen.
+ps | Select VirtualMemorySize | Sort VirtualMemorySize -Descending
+• Vraag een lijst met services op en groepeer op status. Hoeveel services zijn "running" en hoeveel "stopped"?
+$counter = Get-Service | Where-Object {$_.Status -eq "Running"}
+$counter.count
+124
+$counter = Get-Service | Where-Object {$_.Status -eq "stopped"}
+$counter.count
+154
+• Gebruik measure-object om het aantal entries in de c:\windows directory op te vragen.
+dir C:\windows | Measure-Object | select Count
+• Start "notepad" een paar keer. Gebruik nu ps in combinatie met "where" en "like" om alle processen op te vragen die beginnen met een "n".
+ps | where ProcessName -like n*
+• Start notepad. Gebruik get-process en stop-process in een enkele pipeline om notepad te stoppen.

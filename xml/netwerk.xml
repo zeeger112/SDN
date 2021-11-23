@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<netwerk>
+    <client type="1">
+        <os>windows10</os>
+        <ip>192.168.4.101</ip>
+    </client>
+    <client type="2">
+        <os>windows10</os>
+        <ip>192.168.4.102</ip>
+    </client>
+    <client type="3">
+        <os>windows10</os>
+        <ip>192.168.4.103</ip>
+    </client>
+    <client type="4">
+        <os>windows10</os>
+        <ip>192.168.4.104</ip>
+    </client>
+    <client type="5">
+        <os>windows7</os>
+        <ip>192.168.4.105</ip>
+    </client>
+    <server type="1">
+        <os>windowsserver2016</os>
+        <ip>192.168.4.1</ip>
+        <drives>
+            <drive>C</drive>
+            <drive>D</drive>
+            <drive>E</drive>
+        </drives>
+    </server>
+    <server type="2">
+        <os>windowsserver2016</os>
+        <ip>192.168.4.2</ip>
+        <drives>
+            <drive>C</drive>
+            <drive>D</drive>
+            <drive>G</drive>
+        </drives>
+    </server>
+</netwerk>
+
+    
